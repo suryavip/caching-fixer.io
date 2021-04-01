@@ -4,7 +4,7 @@ Caching [fixer.io] free account with PHP and cron job.
 ## Background:
 Free account is limited to 1000 requests per month, hourly data and only EUR as base currency. In my case, I'm fine with hourly and base currency limitation, but probably not ok with the monthly requests limit. To avoid exceeding that, rather than my front-end app requesting directly to [fixer.io], it's better for me to set an hourly cron job to do the request to [fixer.io] and store it on my own server.
 
-24 hours * 31 days is 744 requests. Well below the monthly limit.
+1 request * 24 hours * 31 days = 744 requests/month. Well below the monthly limit.
 
 ## Usage:
 1. Create [fixer.io] account
