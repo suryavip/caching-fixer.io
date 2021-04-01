@@ -33,6 +33,12 @@ if (!array_key_exists('rates', $rj)) {
 	exit();
 }
 
+// https://bugs.php.net/bug.php?id=72567
+// https://stackoverflow.com/questions/42981409/php7-1-json-encode-float-issue
+if (version_compare(phpversion(), '7.1', '>=')) {
+	ini_set('serialize_precision', -1 );
+}
+
 // write rates to file
 $cache = json_encode($rj['rates']);
 $cachefile = fopen(__DIR__ . '/../cache.json', 'w');
