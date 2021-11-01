@@ -29,7 +29,7 @@ $rj = json_decode($r, true);
 
 // checking for the ['rates']
 if (!array_key_exists('rates', $rj)) {
-	echo 'Failed to update cache for fixer.io (rates not found in return)' . $breakline;
+	echo 'Failed to update cache for fixer.io (rates not found in return)' . $breakline . ' → ' . $r . $breakline;
 	exit();
 }
 
